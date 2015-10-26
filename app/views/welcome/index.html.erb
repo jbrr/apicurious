@@ -1,6 +1,8 @@
-<% if current_user %>
-  <h1>Hello <%= current_user.screen_name %></h1>
-  <%= link_to "Logout", logout_path %>
-<% else %>
-<%= link_to "Login", login_path %>
-<% end %>
+<div class="col-md-12">
+  <% if current_user %>
+    <h1>Hello <%= current_user.screen_name %></h1>
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+  <%= link_to "Login", login_path %>
+  <% end %>
+</div>
