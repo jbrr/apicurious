@@ -19,6 +19,14 @@
 				</ul>
 		  </div>
 			<div class="col m8">
+				<ul class="collection">
+					<% client.home_timeline.each do |tweet| %>
+						<li class="collection-item avatar"><%= image_tag tweet.user.profile_image_url, class: "circle" %>
+						<span class="title"><%= tweet.user.name %></span>
+						<p><%= tweet.text %></p>
+						</li>
+					<% end %>
+				</ul>
 			</div>
 		</div>
 	</div>
