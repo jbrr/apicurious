@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "You are now logged in!"
     else
-      flash[:danger] = "Something went wrong!"
+      flash[:notice] = "Something went wrong!"
     end
     redirect_to root_path
   end
