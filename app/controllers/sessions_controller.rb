@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
       flash[:success] = "You are now logged in!"
-      redirect_to profile_path
+      redirect_to root_path
     else
       flash[:notice] = "Something went wrong!"
       redirect_to root_path
