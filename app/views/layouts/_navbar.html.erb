@@ -5,8 +5,8 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-        <li class="navbar-text">
-          <%= current_user.screen_name %>
+        <li>
+          <%= link_to current_user.screen_name, profile_path %>
         </li>
         <li><%= link_to "Logout", logout_path %></li>
       <% else %>
