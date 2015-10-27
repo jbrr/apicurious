@@ -14,6 +14,7 @@ gem "pry-rails"
 gem "figaro"
 gem "unicorn"
 gem "bootstrap-sass"
+gem "materialize-sass"
 gem "twitter"
 gem "omniauth-twitter"
 
@@ -28,7 +29,6 @@ group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem "launchy"
-  gem "simplecov"
 end
 
 group :development do
