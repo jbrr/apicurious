@@ -9,6 +9,9 @@ class ActiveSupport::TestCase
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
       provider: "twitter",
+      info: {
+        image: "http://www.imgur.com/rTlcV.jpg"
+      },
       extra: {
         raw_info: {
           user_id: 1111,
