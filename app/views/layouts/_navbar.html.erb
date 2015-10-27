@@ -1,0 +1,17 @@
+<nav class="nav navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "jbrr apicurious", root_path, class: "navbar-brand", id: "logo" %>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li class="navbar-text">
+          <%= current_user.screen_name %>
+        </li>
+        <li><%= link_to "Logout", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Login", login_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
