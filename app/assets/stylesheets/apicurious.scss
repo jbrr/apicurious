@@ -1,7 +1,11 @@
-.navbar {
-  background-color: #0066FF;
+// Footer Configuration
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.apicurious-body {
-  background-color: #3399FF;
+main {
+  flex: 1 0 auto;
 }
