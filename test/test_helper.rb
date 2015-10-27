@@ -14,6 +14,8 @@ class ActiveSupport::TestCase
           user_id: 1111,
           name: "Jeff",
           screen_name: "jef",
+          location: "Denver, CO",
+          description: "Nude dude with a rude 'tude"
         }
       },
       credentials: {
