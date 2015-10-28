@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     twitter_user.followers_count
   end
 
+  def tweet_count
+    twitter_user.statuses_count
+  end
+
   def home_timeline
     service.client.home_timeline
   end
