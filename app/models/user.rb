@@ -14,4 +14,30 @@ class User < ActiveRecord::Base
 
     user
   end
+
+  def friends_count
+    twitter_user.friends_count
+  end
+
+  def followers_count
+    twitter_user.followers_count
+  end
+
+  def home_timeline
+    service.client.home_timeline
+  end
+
+  def post_tweet(message)
+    service.tweet(message)
+  end
+
+  private
+
+  def service
+    @service ||= TwitterService.new(self)
+  end
+
+  def twitter_user
+    service.client.user
+  end
 end

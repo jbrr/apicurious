@@ -16,13 +16,21 @@
 		    	<li class="collection-item"><%= current_user.name %></li>
 		    	<li class="collection-item"><%= current_user.location %></li>
 		    	<li class="collection-item"><%= current_user.description %></li>
-					<li class="collection-item">Friends: <%= client.user.friends_count %></li>
-					<li class="collection-item">Followers: <%= client.user.followers_count %></li>
+					<li class="collection-item">Friends: <%= current_user.friends_count %></li>
+					<li class="collection-item">Followers: <%= current_user.followers_count %></li>
 				</ul>
 		  </div>
 			<div class="col m8">
+				<div class="row">
+					<%= form_for current_user, url: users_path(current_user), method: :put %>
+					<div class="input-field col m8">
+						<textarea id="user[tweet]" class="materialize-textarea" length="140"></textarea>
+						<label for="user[tweet]">What's happening?</label>
+						<%= f.submit "Tweet", class: "btn waves-effect waves-light", type: "submit", name: "action" %>
+					</div>
+				</div>
 				<ul class="collection">
-					<% client.home_timeline.each do |tweet| %>
+					<% current_user.home_timeline.each do |tweet| %>
 						<li class="collection-item avatar"><%= image_tag tweet.user.profile_image_url, class: "circle" %>
 						<span class="title"><%= tweet.user.name %>
 							<span id="screen-name">

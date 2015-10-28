@@ -5,10 +5,17 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require "minitest/reporters"
+require "vcr"
+require "webmock"
 Minitest::Reporters.use!
 
 class ActiveSupport::TestCase
   fixtures :all
+
+  VCR.configure do |config|
+    config.cassette_library_dir = "text/cassettes"
+    config.hook_into :webmock
+  end
 
   def stub_omniauth
     OmniAuth.config.test_mode = true
