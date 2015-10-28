@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     service.client.update(message)
   end
 
+  def favorite(tweet)
+    twitter_user.favorite(tweet)
+  end
+
   private
 
   def service
