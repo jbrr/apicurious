@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def post_tweet(message)
-    service.tweet(message)
+    service.client.update(message)
   end
 
   private
