@@ -11,18 +11,20 @@
 					<li class="collection-item avatar">
 		    		<%= image_tag current_user.image, class: "circle" %><br>
 		    		<span class="title">
-							<p><%= current_user.screen_name %></p>
+							<p>@<%= current_user.screen_name %></p>
 						</span>
 		    	<li class="collection-item"><%= current_user.name %></li>
 		    	<li class="collection-item"><%= current_user.location %></li>
 		    	<li class="collection-item"><%= current_user.description %></li>
+					<li class="collection-item">Friends: <%= client.user.friends_count %></li>
+					<li class="collection-item">Followers: <%= client.user.followers_count %></li>
 				</ul>
 		  </div>
 			<div class="col m8">
 				<ul class="collection">
 					<% client.home_timeline.each do |tweet| %>
 						<li class="collection-item avatar"><%= image_tag tweet.user.profile_image_url, class: "circle" %>
-						<span class="title"><%= tweet.user.name %></span>
+						<span class="title"><%= tweet.user.name %>  <span id="screen-name">@<%= link_to tweet.user.screen_name, tweet.user.url%></span></span>
 						<p><%= tweet.text %></p>
 						</li>
 					<% end %>
