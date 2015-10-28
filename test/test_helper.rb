@@ -13,29 +13,28 @@ class ActiveSupport::TestCase
   fixtures :all
 
   VCR.configure do |config|
-    config.cassette_library_dir = "text/cassettes"
+    config.cassette_library_dir = "test/cassettes"
     config.hook_into :webmock
   end
 
   def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-      provider: "twitter",
       info: {
-        image: "http://www.imgur.com/rTlcV.jpg"
+        uid: 4050283094,
+        image: "http://abs.twimg.com/sticky/default_profile_images/default_profile_4_normal.png"
       },
       extra: {
         raw_info: {
-          user_id: 1111,
-          name: "Jeff",
-          screen_name: "jef",
+          name: "jr",
+          screen_name: "jbrapitest",
           location: "Denver, CO",
-          description: "Nude dude with a rude 'tude"
+          description: "test dummy"
         }
       },
       credentials: {
-        token: "whatever",
-        secret: "whateversecret"
+        token: "4050283094-g8BQ0D7aullHSRGZRwVsmG9ZHsc1Vxw8HbDXTzl",
+        secret: "LbiWkq6KcHIpScGXpPz5AppnJzEWDwThFwTRAHP6W67sB"
       }
     })
   end

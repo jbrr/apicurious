@@ -2,7 +2,6 @@ class TwitterService
   attr_reader :client, :user
 
   def initialize(user)
-    @user = user
     @client ||= Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["twitter_client"]
       config.consumer_secret     = ENV["twitter_secret"]
