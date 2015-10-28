@@ -24,7 +24,11 @@
 				<ul class="collection">
 					<% client.home_timeline.each do |tweet| %>
 						<li class="collection-item avatar"><%= image_tag tweet.user.profile_image_url, class: "circle" %>
-						<span class="title"><%= tweet.user.name %>  <span id="screen-name">@<%= link_to tweet.user.screen_name, tweet.user.url%></span></span>
+						<span class="title"><%= tweet.user.name %>
+							<span id="screen-name">
+								<a href="<%= tweet.user.url %>">@<%= tweet.user.screen_name %></a>
+							</span>
+						</span>
 						<p><%= tweet.text %></p>
 						</li>
 					<% end %>
