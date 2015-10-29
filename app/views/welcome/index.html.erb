@@ -41,9 +41,11 @@
 						</span>
 						<p><%= tweet.text %></p>
 						<% if tweet.favorited? %>
-							<a href="#!" class="secondary-content"><i class="material-icons blue lighten-1">grade</i></a>
+							<a href="#!" class="secondary-content"><i class="favorited material-icons">grade</i></a>
 						<% else %>
-							<a href="#!" class="secondary-content"><i class="material-icons mdi-inverse">grade</i></a>
+							<%= link_to favorite_path(tweet.id), method: :post do %>
+								<i class="secondary-content material-icons mdi-inverse">grade</i>
+							<% end %>
 						<% end %>
 						</li>
 					<% end %>
