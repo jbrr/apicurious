@@ -15,7 +15,6 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
       click_link "Login"
       assert_equal "/", current_path
       assert page.has_content?("jbrapitest")
-      assert page.has_content?("You are now logged in!")
       assert page.has_link?("Logout")
     end
   end

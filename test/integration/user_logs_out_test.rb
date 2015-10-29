@@ -15,7 +15,6 @@ class UserLogsOutTest < ActionDispatch::IntegrationTest
       assert page.has_content?("jbrapitest")
       click_link "Logout"
       assert_equal "/", current_path
-      assert page.has_content?("You are now logged out!")
       assert page.has_link?("Login")
     end
   end
