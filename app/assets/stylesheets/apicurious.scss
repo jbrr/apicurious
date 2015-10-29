@@ -4,8 +4,25 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #F0F8FF;
 }
 
 main {
   flex: 1 0 auto;
+}
+
+// Text Configuration
+
+#screen-name {
+  font-size: 75%;
+}
+
+// Icon Colors
+
+.mdi-inverse {
+  color: #F0F8FF;
+}
+
+.favorited {
+  color: #42a5f5;
 }
