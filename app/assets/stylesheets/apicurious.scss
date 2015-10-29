@@ -4,6 +4,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #F0F8FF;
 }
 
 main {
@@ -14,4 +15,10 @@ main {
 
 #screen-name {
   font-size: 75%;
+}
+
+// Icon Colors
+
+.mdi-inverse {
+  color: #F0F8FF;
 }
