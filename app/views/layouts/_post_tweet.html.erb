@@ -1,0 +1,7 @@
+<%= form_for current_user, url: tweet_path do |f| %>
+<div class="input-field col m8">
+  <textarea name="tweet" class="materialize-textarea" length="140"></textarea>
+  <label for="tweet">What's happening?</label>
+  <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Submit</button>
+  <% end %>
+</div>

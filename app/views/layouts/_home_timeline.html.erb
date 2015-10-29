@@ -1,0 +1,19 @@
+<ul class="collection">
+  <% current_user.home_timeline.each do |tweet| %>
+    <li class="collection-item avatar"><%= image_tag tweet.user.profile_image_url, class: "circle" %>
+    <span class="title"><%= tweet.user.name %>
+      <span id="screen-name">
+        <a href="<%= tweet.user.url %>">@<%= tweet.user.screen_name %></a>
+      </span>
+    </span>
+    <p><%= tweet.text %></p>
+    <% if tweet.favorited? %>
+      <a href="#!" class="secondary-content"><i class="material-icons" ,id="favorited">grade</i></a>
+    <% else %>
+      <%= link_to favorite_path(tweet.id), method: :post, id: "favorite" do %>
+        <i class="secondary-content material-icons mdi-inverse">grade</i>
+      <% end %>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
